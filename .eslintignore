@@ -1,0 +1,6 @@
+**/dist/*
+**/node_modules/*
+**/*.min.*
+**/*.ts
+**/*.tsx
+example/**/*
