@@ -1,40 +1,31 @@
-// import { createClient } from "@/utils/supabase/server";
-// import Link from "next/link";
-// import { cookies } from "next/headers";
-// import { redirect } from "next/navigation";
+import Link from "next/link";
+import { KeyRound } from "lucide-react";
+import { Button } from "./ui/button";
+import supabaseServer from "@/supabase/config";
+import { AuthError, Session, User } from "@supabase/supabase-js";
+import LogoutButton from "./LogoutButton";
 
-// export default async function AuthButton() {
-//     const cookieStore = cookies();
-//     const supabase = createClient(cookieStore);
+export default async function AuthButton() {
+    const { data, error }: { data: { session: Session | null }; error: AuthError | null } =
+        await supabaseServer().auth.getSession();
 
-//     const {
-//         data: { user },
-//     } = await supabase.auth.getUser();
+    if (error) {
+        throw error;
+    }
 
-//     const signOut = async () => {
-//         "use server";
-
-//         const cookieStore = cookies();
-//         const supabase = createClient(cookieStore);
-//         await supabase.auth.signOut();
-//         return redirect("/login");
-//     };
-
-//     return user ? (
-//         <div className="flex items-center gap-4">
-//             Hey, {user.email}!
-//             <form action={signOut}>
-//                 <button className="bg-btn-background hover:bg-btn-background-hover rounded-md px-4 py-2 no-underline">
-//                     Logout
-//                 </button>
-//             </form>
-//         </div>
-//     ) : (
-//         <Link
-//             href="/login"
-//             className="bg-btn-background hover:bg-btn-background-hover flex rounded-md px-3 py-2 no-underline"
-//         >
-//             Login
-//         </Link>
-//     );
-// }
+    if (data.session) {
+        return <LogoutButton />;
+    } else {
+        return (
+            <Link href="/login">
+                <Button
+                    className="border-neutral-300 bg-white hover:bg-neutral-100 dark:border-neutral-700 dark:bg-black dark:hover:bg-neutral-900"
+                    variant="outline"
+                    size="icon"
+                >
+                    <KeyRound className="h-5 w-5" />
+                </Button>
+            </Link>
+        );
+    }
+}
