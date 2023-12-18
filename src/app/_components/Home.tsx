@@ -3,6 +3,7 @@ import Logo from "@/components/Logo";
 import Image from "next/image";
 import supabaseServer from "@/supabase/config";
 import { QueryData, QueryError } from "@supabase/supabase-js";
+import Socials from "./Socials";
 
 export default async function Home(): Promise<ReactElement | undefined> {
     const query = supabaseServer().from("profile").select("*").eq("id", 1);
@@ -14,8 +15,8 @@ export default async function Home(): Promise<ReactElement | undefined> {
 
     if (data) {
         return (
-            <div className="mt-[13rem] flex flex-col items-center justify-center gap-2">
-                <div className="relative mb-6 h-[18rem] w-[18rem]">
+            <div className="flex flex-col items-center justify-center gap-4">
+                <div className="relative mt-28 h-44 w-44">
                     <Image
                         className="origin-center rounded-full shadow-sm"
                         priority={true}
@@ -25,9 +26,12 @@ export default async function Home(): Promise<ReactElement | undefined> {
                         alt="profile"
                     />
                 </div>
-                <p className="text-5xl font-semibold text-black dark:text-white">{data[0].name}</p>
-                <Logo data={data[0]} />
-                <p className="text-xl text-black dark:text-white">{data[0].profession}</p>
+                <div className="gap flex flex-col items-center">
+                    <p className="text-3xl font-semibold text-black dark:text-white">{data[0].name}</p>
+                    <Logo />
+                    <p className="text-lg font-semibold text-black dark:text-white">{data[0].profession}</p>
+                </div>
+                <Socials />
             </div>
         );
     }

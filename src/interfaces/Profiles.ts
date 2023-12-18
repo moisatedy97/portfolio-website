@@ -4,8 +4,6 @@ export const profileSchema = z.object({
     id: z.number(),
     name: z.string(),
     profession: z.string(),
-    logo: z.string(),
-    logo_black: z.string(),
     picture: z.string(),
 });
 
