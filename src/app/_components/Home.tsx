@@ -25,9 +25,9 @@ export default async function Home(): Promise<ReactElement | undefined> {
                         alt="profile"
                     />
                 </div>
-                <p className="text-5xl font-semibold text-black dark:text-white">{data[0].name}</p>
+                <h3 className="text-5xl font-semibold text-black dark:text-white">{data[0].name}</h3>
                 <Logo data={data[0]} />
-                <p className="text-xl text-black dark:text-white">{data[0].profession}</p>
+                <h6 className="text-xl text-black dark:text-white">{data[0].profession}</h6>
             </div>
         );
     }
