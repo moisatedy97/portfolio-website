@@ -16,7 +16,7 @@ export default async function Home(): Promise<ReactElement | undefined> {
     if (data) {
         return (
             <div className="flex flex-col items-center justify-center gap-4">
-                <div className="relative mt-28 h-44 w-44">
+                <div className="relative mt-28 h-44 w-44 lg:mt-48">
                     <Image
                         className="origin-center rounded-full shadow-sm"
                         priority={true}

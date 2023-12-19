@@ -2,7 +2,7 @@ import Link from "next/link";
 import { KeyRound } from "lucide-react";
 import { Button } from "./ui/button";
 import supabaseServer from "@/supabase/config";
-import { AuthError, Session, User } from "@supabase/supabase-js";
+import { AuthError, Session } from "@supabase/supabase-js";
 import LogoutButton from "./LogoutButton";
 
 export default async function AuthButton() {
