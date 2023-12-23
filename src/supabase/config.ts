@@ -3,8 +3,8 @@ import { cookies } from "next/headers";
 import { Database } from "../../types/supabase";
 
 const supabaseServer = () => {
-    cookies().getAll();
-    return createServerComponentClient<Database>({ cookies });
+  cookies().getAll();
+  return createServerComponentClient<Database>({ cookies });
 };
 
 export default supabaseServer;
