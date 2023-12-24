@@ -22,12 +22,12 @@ export default function LogoutButton() {
 
   return (
     <Button
-      className="border-neutral-300 bg-white hover:bg-neutral-100 dark:border-neutral-700 dark:bg-black dark:hover:bg-neutral-900"
+      className="border-black bg-white hover:bg-primary dark:border-primary dark:bg-black dark:hover:bg-black"
       variant="outline"
       size="icon"
       onClick={signOut}
     >
-      <LogOut className="h-5 w-5" />
+      <LogOut className="h-5 w-5 fill-primary stroke-black dark:fill-white dark:stroke-primary dark:hover:fill-primary" />
     </Button>
   );
 }

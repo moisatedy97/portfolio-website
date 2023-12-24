@@ -16,9 +16,9 @@ export default async function Home(): Promise<ReactElement | undefined> {
   if (data) {
     return (
       <div className="flex flex-col items-center justify-center gap-4">
-        <div className="relative mt-28 h-44 w-44 lg:mt-48">
+        <div className="relative mt-32 h-44 w-44 md:mt-44 lg:mt-48">
           <Image
-            className="origin-center rounded-full shadow-sm"
+            className="origin-center rounded-full shadow-sm shadow-primary"
             priority={true}
             fill={true}
             sizes="100vw, 100vh"
@@ -27,9 +27,11 @@ export default async function Home(): Promise<ReactElement | undefined> {
           />
         </div>
         <div className="gap flex flex-col items-center">
-          <p className="text-3xl font-semibold text-black dark:text-white">{data[0].name}</p>
+          <p className="text-4xl font-bold text-primary hover:text-primary/90">{data[0].name}</p>
           <Logo />
-          <p className="text-lg font-semibold text-black dark:text-white">{data[0].profession}</p>
+          <p className="text-lg font-semibold text-black hover:text-primary/90 dark:text-white dark:hover:text-primary/90">
+            {data[0].profession}
+          </p>
         </div>
         <Socials />
       </div>

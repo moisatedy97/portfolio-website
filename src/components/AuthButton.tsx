@@ -19,11 +19,11 @@ export default async function AuthButton() {
     return (
       <Link href="/login">
         <Button
-          className="border-neutral-300 bg-white hover:bg-neutral-100 dark:border-neutral-700 dark:bg-black dark:hover:bg-neutral-900"
+          className="border-black bg-white hover:bg-primary dark:border-primary dark:bg-black dark:hover:bg-black"
           variant="outline"
           size="icon"
         >
-          <KeyRound className="h-5 w-5" />
+          <KeyRound className="h-5 w-5 fill-primary dark:fill-white dark:stroke-primary dark:hover:fill-black" />
         </Button>
       </Link>
     );

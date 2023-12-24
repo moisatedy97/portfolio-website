@@ -21,15 +21,15 @@ export function ThemeModeToggle(): ReactElement | undefined {
   if (hasMounted) {
     return (
       <Button
-        className="border-neutral-300 bg-white hover:bg-neutral-100 dark:border-neutral-700 dark:bg-black dark:hover:bg-neutral-900"
+        className="border-black bg-white hover:bg-primary dark:border-primary dark:bg-black dark:hover:bg-black"
         variant="outline"
         size="icon"
         onClick={handleClick}
       >
         {theme === "dark" ? (
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 text-white" />
+          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 fill-primary hover:stroke-primary" />
         ) : (
-          <Moon className="h-[1.2rem] w-[1.2rem] rotate-90 scale-100 text-black" />
+          <Moon className="h-[1.2rem] w-[1.2rem] rotate-90 scale-100 fill-primary" />
         )}
       </Button>
     );

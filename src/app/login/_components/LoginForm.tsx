@@ -38,8 +38,8 @@ export default function LoginForm() {
 
   return (
     <Form {...form}>
-      <form className="flex w-[25rem] flex-col gap-2" onSubmit={form.handleSubmit(submitForm)}>
-        <h3 className="mb-4 self-center text-3xl font-semibold">Login Form</h3>
+      <form className="flex w-[20rem] flex-col gap-2 sm:w-[25rem]" onSubmit={form.handleSubmit(submitForm)}>
+        <h3 className="mb-4 self-center text-3xl font-bold text-primary">Login Form</h3>
         <FormField
           control={form.control}
           name="email"
