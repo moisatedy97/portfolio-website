@@ -4,6 +4,8 @@ import Image from "next/image";
 import supabaseServer from "@/supabase/config";
 import { QueryData, QueryError } from "@supabase/supabase-js";
 import Socials from "./Socials";
+import Books from "./Books";
+import Projects from "./Projects";
 
 export default async function Home(): Promise<ReactElement | undefined> {
   const query = supabaseServer().from("profile").select("*").eq("id", 1);
@@ -34,6 +36,8 @@ export default async function Home(): Promise<ReactElement | undefined> {
           </p>
         </div>
         <Socials />
+        <Books />
+        <Projects />
       </div>
     );
   }
