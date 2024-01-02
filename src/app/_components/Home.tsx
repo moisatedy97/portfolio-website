@@ -36,8 +36,6 @@ export default async function Home(): Promise<ReactElement | undefined> {
           </p>
         </div>
         <Socials />
-        <Books />
-        <Projects />
       </div>
     );
   }
