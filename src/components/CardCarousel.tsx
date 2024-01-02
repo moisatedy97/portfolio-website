@@ -15,7 +15,6 @@ export default function CardCarousel({ cards, arrows = false, delay = 4000 }: Ca
 
   return (
     <Carousel
-      className="w-full"
       plugins={[autoplay.current]}
       opts={{
         align: "start",
