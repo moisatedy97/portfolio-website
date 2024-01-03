@@ -27,7 +27,7 @@ export default async function Books(): Promise<ReactElement | undefined> {
 
   if (data) {
     return (
-      <div className="mx-[2rem] my-[6rem] flex flex-col gap-4 md:mx-[8rem] md:my-[8rem] lg:mx-[20rem] lg:my-[20rem]">
+      <div className="mx-[0.5rem] mt-[8rem] flex max-w-[100rem] flex-col gap-4 md:mx-[8rem] md:mt-[10rem] lg:mx-[14rem] lg:mt-[14rem] 2xl:mx-[20rem] 2xl:mt-[20rem]">
         <h3 className="text-xl font-bold text-primary md:text-2xl">Knowledge books</h3>
         <CardCarousel cards={createBookCards(data)} />
       </div>
@@ -41,7 +41,7 @@ type BookProps = {
 
 const Book = ({ book }: BookProps): ReactElement => {
   return (
-    <div className="flex flex-col items-center gap-4 p-4 md:flex-row md:gap-6">
+    <div className="flex flex-col items-center gap-4 p-4 xl:flex-row">
       <Link href={book.link} className="relative h-60 w-48">
         <Image
           className="origin-center rounded-lg"
@@ -54,12 +54,12 @@ const Book = ({ book }: BookProps): ReactElement => {
       </Link>
       <Card className="flex flex-1 flex-col justify-between shadow-sm shadow-primary hover:shadow-md hover:shadow-primary md:h-60 dark:bg-black">
         <CardHeader className="px-6 py-4">
-          <CardTitle className="text-lg md:text-2xl">{book.name}</CardTitle>
+          <CardTitle className="text-lg lg:text-3xl">{book.name}</CardTitle>
         </CardHeader>
         <CardContent className="overflow-auto">
-          <CardDescription className="text-[0.7em] md:text-xs">{book.description}</CardDescription>
+          <CardDescription className="text-[0.7em] font-semibold md:text-[0.9em]">{book.description}</CardDescription>
         </CardContent>
-        <CardFooter className="self-end py-4 text-sm text-primary/90 md:text-lg">{book.author}</CardFooter>
+        <CardFooter className="self-end py-4 text-sm font-medium text-primary/90 md:text-lg">{book.author}</CardFooter>
       </Card>
     </div>
   );
