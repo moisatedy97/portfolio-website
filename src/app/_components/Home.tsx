@@ -23,7 +23,7 @@ export default async function Home(): Promise<ReactElement | undefined> {
             className="origin-center rounded-full shadow-sm shadow-primary"
             priority={true}
             fill={true}
-            sizes="100vw, 100vh"
+            sizes="176px"
             src={data[0].picture}
             alt="profile"
           />

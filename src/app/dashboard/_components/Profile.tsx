@@ -64,7 +64,9 @@ export default function Profile(): ReactElement {
       <ProfilePicture />
       <ProfileName />
       <ProfileProfession />
-      <Button onClick={handleOnClickUpdate}>Update</Button>
+      <Button name="updateProfileButton" aria-label="updateProfileButton" onClick={handleOnClickUpdate}>
+        Update
+      </Button>
     </div>
   );
 }

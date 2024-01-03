@@ -17,8 +17,10 @@ export default async function AuthButton() {
     return <LogoutButton />;
   } else {
     return (
-      <Link href="/login">
+      <Link aria-label="authenticationLink" href="/login">
         <Button
+          name="authenticationButton"
+          aria-label="authenticationButton"
           className="border-black bg-white hover:bg-primary dark:border-primary dark:bg-black dark:hover:bg-black"
           variant="outline"
           size="icon"

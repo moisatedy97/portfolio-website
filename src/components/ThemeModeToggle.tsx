@@ -21,6 +21,8 @@ export function ThemeModeToggle(): ReactElement | undefined {
   if (hasMounted) {
     return (
       <Button
+        name="toggleThemeButton"
+        aria-label="toggleThemeButton"
         className="border-black bg-white hover:bg-primary dark:border-primary dark:bg-black dark:hover:bg-black"
         variant="outline"
         size="icon"

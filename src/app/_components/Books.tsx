@@ -42,12 +42,12 @@ type BookProps = {
 const Book = ({ book }: BookProps): ReactElement => {
   return (
     <div className="flex flex-col items-center gap-4 p-4 xl:flex-row">
-      <Link href={book.link} className="relative h-60 w-48">
+      <Link aria-label={`${book.name}Book`} href={book.link} className="relative h-60 w-48">
         <Image
           className="origin-center rounded-lg"
           priority={true}
           fill={true}
-          sizes="100vw, 100vh"
+          sizes="192px"
           src={book.image}
           alt={book.name}
         />

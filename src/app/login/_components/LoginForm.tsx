@@ -71,7 +71,7 @@ export default function LoginForm() {
             </FormItem>
           )}
         />
-        <Button className="mt-4 w-20 self-center" type="submit">
+        <Button name="loginButton" aria-label="loginButton" className="mt-4 w-20 self-center" type="submit">
           Login
         </Button>
       </form>

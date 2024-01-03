@@ -48,7 +48,7 @@ const Project = ({ project }: ProjectProps): ReactElement => {
             className="origin-center rounded-lg"
             priority={true}
             fill={true}
-            sizes="100vw, 100vh"
+            sizes="(min-width: 1660px) 448px, (min-width: 1540px) calc(34vw - 110px), (min-width: 640px) 448px, 288px"
             src={image}
             alt={project.name}
           />
@@ -86,7 +86,7 @@ const Project = ({ project }: ProjectProps): ReactElement => {
 const HostFramework = ({ project }: ProjectProps): ReactElement | undefined => {
   if (project.host.length > 0) {
     return (
-      <Link href={project.host}>
+      <Link aria-label={`${project.name}HostLink`} href={project.host}>
         <svg
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ const HostFramework = ({ project }: ProjectProps): ReactElement | undefined => {
 const GithubFramework = ({ project }: ProjectProps): ReactElement | undefined => {
   if (project.github.length > 0) {
     return (
-      <Link href={project.github}>
+      <Link aria-label={`${project.name}GithubLink`} href={project.github}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 50 50"
@@ -165,7 +165,7 @@ const Framework = ({ framework }: FrameworkProps): ReactElement => {
           className="origin-center"
           priority={true}
           fill={true}
-          sizes="100vw, 100vh"
+          sizes="20px"
           src={framework.image}
           alt={framework.name}
         />

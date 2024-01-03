@@ -22,6 +22,8 @@ export default function LogoutButton() {
 
   return (
     <Button
+      name="logoutButton"
+      aria-label="logoutButton"
       className="border-black bg-white hover:bg-primary dark:border-primary dark:bg-black dark:hover:bg-black"
       variant="outline"
       size="icon"

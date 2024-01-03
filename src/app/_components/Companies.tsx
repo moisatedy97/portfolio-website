@@ -24,7 +24,7 @@ export default async function Companies(): Promise<ReactElement | undefined> {
                   className="origin-center"
                   priority={true}
                   fill={true}
-                  sizes="100vw, 100vh"
+                  sizes="144px"
                   src={company.logo}
                   alt={company.name}
                 />
