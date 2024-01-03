@@ -2,6 +2,7 @@ import Sidebar from "@/components/Sidebar";
 import Home from "./_components/Home";
 import Books from "./_components/Books";
 import Projects from "./_components/Projects";
+import Companies from "./_components/Companies";
 
 export default async function Index() {
   return (
@@ -11,6 +12,7 @@ export default async function Index() {
         <Home />
         <Books />
         <Projects />
+        <Companies />
       </main>
     </div>
   );

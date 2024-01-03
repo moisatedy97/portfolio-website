@@ -47,6 +47,47 @@ export interface Database {
           }
         ]
       }
+      companies: {
+        Row: {
+          contractual_status: Database["public"]["Enums"]["contractual_status_enum"]
+          employment_status: Database["public"]["Enums"]["employment_status_enum"]
+          end_date: string | null
+          id: number
+          logo: string
+          name: string
+          profile_id: number
+          start_date: string | null
+        }
+        Insert: {
+          contractual_status: Database["public"]["Enums"]["contractual_status_enum"]
+          employment_status: Database["public"]["Enums"]["employment_status_enum"]
+          end_date?: string | null
+          id?: number
+          logo: string
+          name: string
+          profile_id: number
+          start_date?: string | null
+        }
+        Update: {
+          contractual_status?: Database["public"]["Enums"]["contractual_status_enum"]
+          employment_status?: Database["public"]["Enums"]["employment_status_enum"]
+          end_date?: string | null
+          id?: number
+          logo?: string
+          name?: string
+          profile_id?: number
+          start_date?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "companies_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profile"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
       frameworks: {
         Row: {
           id: number
@@ -204,7 +245,8 @@ export interface Database {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      contractual_status_enum: "determined" | "undetermined" | "piva"
+      employment_status_enum: "active" | "inactive"
     }
     CompositeTypes: {
       [_ in never]: never

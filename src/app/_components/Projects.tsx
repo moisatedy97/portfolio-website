@@ -4,7 +4,7 @@ import supabaseServer from "@/supabase/config";
 import { QueryData, QueryError } from "@supabase/supabase-js";
 import { ReactElement, ReactNode } from "react";
 import Image from "next/image";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChevronDown } from "lucide-react";
 import { Framework } from "@/interfaces/Frameworks";
 import Link from "next/link";
