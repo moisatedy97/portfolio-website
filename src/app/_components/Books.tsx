@@ -49,7 +49,7 @@ const Book = ({ book }: BookProps): ReactElement => {
         <CardHeader className="px-6 py-4">
           <CardTitle className="text-lg lg:text-3xl">{book.name}</CardTitle>
         </CardHeader>
-        <CardContent className="overflow-auto">
+        <CardContent className="scrollbar-primary overflow-y-auto">
           <CardDescription className="text-xs font-semibold md:text-sm">{book.description}</CardDescription>
         </CardContent>
         <CardFooter className="self-end py-4 text-sm font-medium text-primary/90 md:text-lg">{book.author}</CardFooter>

@@ -7,7 +7,7 @@ import About from "./_components/About";
 
 export default async function Index() {
   return (
-    <div className="flex h-dvh w-full flex-col overflow-y-auto bg-accent font-sans dark:bg-black">
+    <div className="scrollbar-primary flex h-dvh w-full flex-col overflow-y-scroll bg-accent font-sans dark:bg-black">
       <Sidebar />
       <main>
         <Home />

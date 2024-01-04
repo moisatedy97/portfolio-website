@@ -58,6 +58,12 @@
   }
 }
 
+@layer components {
+  .scrollbar-primary {
+    @apply scrollbar-thin scrollbar-thumb-primary/90 scrollbar-thumb-rounded-md;
+  }
+}
+
 @layer utilities {
   .grow-div {
     flex: 0 1 auto;

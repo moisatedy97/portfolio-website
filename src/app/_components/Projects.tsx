@@ -126,7 +126,7 @@ const FrameworksDropdown = ({ frameworks }: FrameworksDropdownProps): ReactEleme
 
     return (
       <div className="group flex h-4 w-11/12 flex-col items-center justify-between rounded-b-md bg-primary/90 shadow-sm shadow-primary transition-all duration-1000 hover:h-[17rem] lg:hover:h-[20rem]">
-        <div className="flex h-full w-full justify-between overflow-y-auto px-11 py-6 opacity-0 transition-opacity duration-700 ease-in group-hover:opacity-100 md:px-14 2xl:px-20">
+        <div className="flex h-full w-full justify-between overflow-y-auto px-11 py-6 opacity-0 transition-opacity duration-700 ease-in scrollbar-none group-hover:opacity-100 md:px-14 2xl:px-20">
           {frontendFrameworks.length > 0 ? (
             <div>
               <h4 className="text-xl font-bold text-white lg:text-2xl 2xl:text-3xl">Frontend</h4>

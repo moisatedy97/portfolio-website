@@ -54,6 +54,7 @@
     "prettier": "^3.1.0",
     "prettier-plugin-tailwindcss": "^0.5.7",
     "supabase": "^1.123.0",
+    "tailwind-scrollbar": "^3.0.5",
     "tailwindcss": "^3.4.0",
     "typescript": "^5"
   }
