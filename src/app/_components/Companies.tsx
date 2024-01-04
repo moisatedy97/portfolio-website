@@ -15,7 +15,7 @@ export default async function Companies(): Promise<ReactElement | undefined> {
   if (data) {
     return (
       <div className="mx-[0.5rem] mt-[3rem] flex max-w-[100rem] flex-col gap-4 md:mx-[8rem] md:mt-[8rem] lg:mx-[14rem] 2xl:mx-[20rem]">
-        <h3 className="text-xl font-bold text-primary md:text-2xl">Worked/ing for</h3>
+        <h3 className="text-xl font-bold text-primary hover:text-primary/60 md:text-2xl">Worked/ing for</h3>
         <div className="flex flex-wrap justify-center gap-4 p-2">
           {data.map((company: Company, index: number) => {
             return (

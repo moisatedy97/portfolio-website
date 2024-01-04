@@ -8,6 +8,7 @@ import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/comp
 import { ChevronDown } from "lucide-react";
 import { Framework } from "@/interfaces/Frameworks";
 import Link from "next/link";
+import FrameworkCard from "@/components/FrameworkCard";
 
 export default async function Projects(): Promise<ReactElement | undefined> {
   const query = supabaseServer().from("projects").select("*, frameworks (*)").eq("id", 1);
@@ -20,7 +21,7 @@ export default async function Projects(): Promise<ReactElement | undefined> {
   if (data) {
     return (
       <div className="mx-[0.5rem] mt-[3rem] flex max-w-[100rem] flex-col gap-4 md:mx-[8rem] md:mt-[8rem] lg:mx-[14rem] 2xl:mx-[20rem]">
-        <h3 className="text-xl font-bold text-primary md:text-2xl">Projects</h3>
+        <h3 className="text-xl font-bold text-primary hover:text-primary/60 md:text-2xl">Projects</h3>
         {data.map((project: Project, index: number) => {
           return (
             <div key={index}>
@@ -66,7 +67,7 @@ const Project = ({ project }: ProjectProps): ReactElement => {
       <div className="relative flex flex-1 flex-col items-center">
         <Card className="flex flex-1 flex-col justify-between shadow-sm shadow-primary hover:shadow-md hover:shadow-primary dark:bg-black">
           <CardHeader className="px-6 py-4">
-            <CardTitle className="text-lg lg:text-3xl">{project.name}</CardTitle>
+            <CardTitle className="text-lg hover:text-primary/60 lg:text-3xl">{project.name}</CardTitle>
             <CardDescription className="text-xs font-semibold md:text-sm">{project.description}</CardDescription>
           </CardHeader>
           <CardFooter className="flex w-full justify-end gap-2">
@@ -131,7 +132,7 @@ const FrameworksDropdown = ({ frameworks }: FrameworksDropdownProps): ReactEleme
             <div>
               <h4 className="text-xl font-bold text-white lg:text-2xl 2xl:text-3xl">Frontend</h4>
               {frontendFrameworks.map((framework: Framework, index: number) => {
-                return <Framework key={index} framework={framework} />;
+                return <FrameworkCard key={index} framework={framework} />;
               })}
             </div>
           ) : undefined}
@@ -139,7 +140,7 @@ const FrameworksDropdown = ({ frameworks }: FrameworksDropdownProps): ReactEleme
             <div>
               <h4 className="text-xl font-bold text-white lg:text-2xl 2xl:text-3xl">Backend</h4>
               {backendFrameworks.map((framework: Framework, index: number) => {
-                return <Framework key={index} framework={framework} />;
+                return <FrameworkCard key={index} framework={framework} />;
               })}
             </div>
           ) : undefined}
@@ -148,19 +149,4 @@ const FrameworksDropdown = ({ frameworks }: FrameworksDropdownProps): ReactEleme
       </div>
     );
   }
-};
-
-type FrameworkProps = {
-  framework: Framework;
-};
-
-const Framework = ({ framework }: FrameworkProps): ReactElement => {
-  return (
-    <div id={framework.id.toString()} className="ml-2 mt-2 flex items-center gap-2">
-      <div className="relative h-5 w-5">
-        <Image className="origin-center" fill={true} sizes="20px" src={framework.image} alt={framework.name} />
-      </div>
-      <p className="text-sm font-medium text-black lg:text-base 2xl:text-lg">{framework.name}</p>
-    </div>
-  );
 };

@@ -28,7 +28,7 @@ export default async function Books(): Promise<ReactElement | undefined> {
   if (data) {
     return (
       <div className="mx-[0.5rem] mt-[3rem] flex max-w-[100rem] flex-col gap-4 md:mx-[8rem] md:mt-[8rem] lg:mx-[14rem] 2xl:mx-[20rem]">
-        <h3 className="text-xl font-bold text-primary md:text-2xl">Knowledge books</h3>
+        <h3 className="text-xl font-bold text-primary hover:text-primary/60 md:text-2xl">Knowledge books</h3>
         <CardCarousel cards={createBookCards(data)} />
       </div>
     );
@@ -47,12 +47,14 @@ const Book = ({ book }: BookProps): ReactElement => {
       </Link>
       <Card className="flex flex-1 flex-col justify-between shadow-sm shadow-primary hover:shadow-md hover:shadow-primary md:h-60 dark:bg-black">
         <CardHeader className="px-6 py-4">
-          <CardTitle className="text-lg lg:text-3xl">{book.name}</CardTitle>
+          <CardTitle className="text-lg hover:text-primary/60 lg:text-3xl">{book.name}</CardTitle>
         </CardHeader>
         <CardContent className="scrollbar-primary overflow-y-auto">
           <CardDescription className="text-xs font-semibold md:text-sm">{book.description}</CardDescription>
         </CardContent>
-        <CardFooter className="self-end py-4 text-sm font-medium text-primary/90 md:text-lg">{book.author}</CardFooter>
+        <CardFooter className="self-end py-4 text-sm font-medium text-primary/90 hover:text-primary/60 md:text-lg">
+          {book.author}
+        </CardFooter>
       </Card>
     </div>
   );
