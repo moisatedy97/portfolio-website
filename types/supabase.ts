@@ -135,18 +135,21 @@ export interface Database {
       };
       profile: {
         Row: {
+          about: string;
           id: number;
           name: string;
           picture: string;
           profession: string;
         };
         Insert: {
+          about?: string;
           id?: number;
           name?: string;
           picture?: string;
           profession?: string;
         };
         Update: {
+          about?: string;
           id?: number;
           name?: string;
           picture?: string;
