@@ -3,6 +3,7 @@ import Home from "./_components/Home";
 import Books from "./_components/Books";
 import Projects from "./_components/Projects";
 import Companies from "./_components/Companies";
+import About from "./_components/About";
 
 export default async function Index() {
   return (
@@ -10,6 +11,7 @@ export default async function Index() {
       <Sidebar />
       <main>
         <Home />
+        <About />
         <Books />
         <Projects />
         <Companies />

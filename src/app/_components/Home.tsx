@@ -4,8 +4,6 @@ import Image from "next/image";
 import supabaseServer from "@/supabase/config";
 import { QueryData, QueryError } from "@supabase/supabase-js";
 import Socials from "./Socials";
-import Books from "./Books";
-import Projects from "./Projects";
 
 export default async function Home(): Promise<ReactElement | undefined> {
   const query = supabaseServer().from("profile").select("*").eq("id", 1);
@@ -18,9 +16,9 @@ export default async function Home(): Promise<ReactElement | undefined> {
   if (data) {
     return (
       <div className="flex flex-col items-center justify-center gap-4">
-        <div className="relative mt-32 h-44 w-44 md:mt-44 lg:mt-48">
+        <div className="relative mt-32 h-44 w-[170px] md:mt-44 lg:mt-48">
           <Image
-            className="origin-center rounded-full shadow-sm shadow-primary"
+            className="origin-center rounded-full"
             priority={true}
             fill={true}
             sizes="176px"

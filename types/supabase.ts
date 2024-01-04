@@ -48,6 +48,9 @@ export interface Database {
           end_date: string | null;
           id: number;
           logo: string;
+          logo_heigth: number;
+          logo_sizes: string;
+          logo_width: number;
           name: string;
           profile_id: number;
           start_date: string | null;
@@ -58,6 +61,9 @@ export interface Database {
           end_date?: string | null;
           id?: number;
           logo: string;
+          logo_heigth: number;
+          logo_sizes: string;
+          logo_width: number;
           name: string;
           profile_id: number;
           start_date?: string | null;
@@ -68,6 +74,9 @@ export interface Database {
           end_date?: string | null;
           id?: number;
           logo?: string;
+          logo_heigth?: number;
+          logo_sizes?: string;
+          logo_width?: number;
           name?: string;
           profile_id?: number;
           start_date?: string | null;

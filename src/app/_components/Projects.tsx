@@ -46,7 +46,6 @@ const Project = ({ project }: ProjectProps): ReactElement => {
         <div className="relative h-44 w-full sm:h-64">
           <Image
             className="origin-center rounded-lg"
-            priority={true}
             fill={true}
             sizes="(min-width: 1660px) 448px, (min-width: 1540px) calc(34vw - 110px), (min-width: 640px) 448px, 288px"
             src={image}
@@ -68,9 +67,7 @@ const Project = ({ project }: ProjectProps): ReactElement => {
         <Card className="flex flex-1 flex-col justify-between shadow-sm shadow-primary hover:shadow-md hover:shadow-primary dark:bg-black">
           <CardHeader className="px-6 py-4">
             <CardTitle className="text-lg lg:text-3xl">{project.name}</CardTitle>
-            <CardDescription className="text-[0.7em] font-semibold md:text-[0.9em]">
-              {project.description}
-            </CardDescription>
+            <CardDescription className="text-xs font-semibold md:text-sm">{project.description}</CardDescription>
           </CardHeader>
           <CardFooter className="flex w-full justify-end gap-2">
             <GithubFramework project={project} />
@@ -161,14 +158,7 @@ const Framework = ({ framework }: FrameworkProps): ReactElement => {
   return (
     <div id={framework.id.toString()} className="ml-2 mt-2 flex items-center gap-2">
       <div className="relative h-5 w-5">
-        <Image
-          className="origin-center"
-          priority={true}
-          fill={true}
-          sizes="20px"
-          src={framework.image}
-          alt={framework.name}
-        />
+        <Image className="origin-center" fill={true} sizes="20px" src={framework.image} alt={framework.name} />
       </div>
       <p className="text-sm font-medium text-black lg:text-base 2xl:text-lg">{framework.name}</p>
     </div>

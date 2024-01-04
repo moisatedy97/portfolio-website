@@ -12,6 +12,9 @@ export const companySchema = z.object({
   contractual_status: z.enum(EmploymentStatus),
   employment_status: z.enum(ContractualStatus),
   logo: z.string(),
+  logo_width: z.number(),
+  logo_heigth: z.number(),
+  logo_sizes: z.string(),
 });
 
 export type Company = z.infer<typeof companySchema>;

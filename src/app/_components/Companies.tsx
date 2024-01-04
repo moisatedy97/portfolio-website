@@ -19,16 +19,14 @@ export default async function Companies(): Promise<ReactElement | undefined> {
         <div className="flex flex-wrap justify-center gap-4 p-2">
           {data.map((company: Company, index: number) => {
             return (
-              <div key={index} className="relative h-16 w-36">
-                <Image
-                  className="origin-center"
-                  priority={true}
-                  fill={true}
-                  sizes="144px"
-                  src={company.logo}
-                  alt={company.name}
-                />
-              </div>
+              <Image
+                key={index}
+                height={company.logo_heigth}
+                width={company.logo_width}
+                sizes={company.logo_sizes}
+                src={company.logo}
+                alt={company.name}
+              />
             );
           })}
         </div>
