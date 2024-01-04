@@ -143,6 +143,7 @@ export interface Database {
         Row: {
           about: string
           crontab: number
+          email: string
           id: number
           name: string
           picture: string
@@ -151,6 +152,7 @@ export interface Database {
         Insert: {
           about?: string
           crontab?: number
+          email?: string
           id?: number
           name?: string
           picture?: string
@@ -159,6 +161,7 @@ export interface Database {
         Update: {
           about?: string
           crontab?: number
+          email?: string
           id?: number
           name?: string
           picture?: string
