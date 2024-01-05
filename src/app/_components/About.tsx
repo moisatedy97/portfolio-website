@@ -17,7 +17,7 @@ export default async function About(): Promise<ReactElement | undefined> {
       <div className="mx-[0.5rem] mt-[8rem] flex max-w-[100rem] flex-col gap-4 md:mx-[8rem] md:mt-[10rem] lg:mx-[14rem] lg:mt-[14rem] 2xl:mx-[20rem] 2xl:mt-[20rem]">
         <h3 className="text-xl font-bold text-primary hover:text-primary/60 md:text-2xl">About</h3>
         <p className="text-sm font-semibold md:text-base">{data[0].about}</p>
-        <div className="relative mt-4 h-[300px] w-[303px] self-center md:h-[450px] md:w-[455px]">
+        <div className="relative mt-4 h-[300px] w-[290px] self-center md:h-[450px] md:w-[435px]">
           <Image
             priority={true}
             fill={true}

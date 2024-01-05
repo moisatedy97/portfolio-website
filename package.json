@@ -1,6 +1,6 @@
 {
   "name": "portfolio-website",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -36,7 +36,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.49.2",
-    "sharp": "^0.33.0",
+    "sharp": "^0.33.1",
     "sonner": "^1.2.4",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",
