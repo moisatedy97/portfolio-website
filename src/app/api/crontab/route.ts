@@ -4,14 +4,15 @@ import { QueryData, QueryError } from "@supabase/supabase-js";
 
 export async function GET() {
   const isEmailActive: string | undefined = process.env.NEXT_EMAIL;
-  const query = supabaseServer().from("profile").select("*").eq("id", 1);
-  const { data, error }: { data: QueryData<typeof query> | null; error: QueryError | null } = await query;
-
-  if (error) {
-    throw error;
-  }
 
   if (isEmailActive && isEmailActive === "true") {
+    const query = supabaseServer().from("profile").select("*").eq("id", 1);
+    const { data, error }: { data: QueryData<typeof query> | null; error: QueryError | null } = await query;
+
+    if (error) {
+      throw error;
+    }
+
     if (data && data[0].id > 0) {
       try {
         await mailTransporter.sendMail({
