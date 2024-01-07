@@ -11,6 +11,7 @@ import Image from "next/image";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function Profile(): ReactElement {
   const supabase = createClientComponentClient<Database>();
@@ -40,7 +41,7 @@ export default function Profile(): ReactElement {
     if (profile) {
       const query = supabase
         .from("profile")
-        .update({ name: profile.name, profession: profile.profession, picture: profile.picture })
+        .update({ name: profile.name, profession: profile.profession, picture: profile.picture, about: profile.about })
         .eq("id", 1)
         .select();
 
@@ -52,7 +53,7 @@ export default function Profile(): ReactElement {
 
       if (data && data[0].id > 0) {
         setProfile(data[0]);
-        toast(`Data for id: ${data[0].id} has been updated`, {
+        toast(`Data for ${data[0].name} has been updated`, {
           description: new Date().toLocaleString("it"),
         });
       }
@@ -64,8 +65,9 @@ export default function Profile(): ReactElement {
       <ProfilePicture />
       <ProfileName />
       <ProfileProfession />
+      <ProfileAbout />
       <Button name="updateProfileButton" aria-label="updateProfileButton" onClick={handleOnClickUpdate}>
-        Update
+        Update Profile
       </Button>
     </div>
   );
@@ -91,12 +93,13 @@ const ProfilePicture = (): ReactElement => {
           />
         </div>
         <Label htmlFor="profile-picture">Picture</Label>
-        <Input
+        <Textarea
           id="profile-picture"
-          className="dark:bg-neutral-900 dark:text-white"
+          className="scrollbar-none dark:bg-neutral-900 dark:text-white"
           placeholder="Name"
+          rows={6}
           value={profile.picture}
-          onChange={(event: ChangeEvent<HTMLInputElement>) => {
+          onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {
             setProfilePicture(event.target.value);
           }}
         />
@@ -150,6 +153,33 @@ const ProfileProfession = (): ReactElement => {
           value={profile.profession}
           onChange={(event: ChangeEvent<HTMLInputElement>) => {
             setProfileProfession(event.target.value);
+          }}
+        />
+      </>
+    );
+  } else {
+    return <Skeleton className="h-10 bg-neutral-200 dark:bg-neutral-800" />;
+  }
+};
+
+const ProfileAbout = (): ReactElement => {
+  const { profile, setProfileAbout } = useProfileStore((state) => ({
+    profile: state.profile,
+    setProfileAbout: state.setProfileAbout,
+  }));
+
+  if (profile) {
+    return (
+      <>
+        <Label htmlFor="profile-about">About</Label>
+        <Textarea
+          id="profile-about"
+          className="scrollbar-none dark:bg-neutral-900 dark:text-white"
+          placeholder="About"
+          value={profile.about}
+          rows={6}
+          onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {
+            setProfileAbout(event.target.value);
           }}
         />
       </>

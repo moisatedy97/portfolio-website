@@ -11,6 +11,7 @@ type ProfileActions = {
   setProfileName: (name: string) => void;
   setProfileProfession: (profession: string) => void;
   setProfilePicture: (picture: string) => void;
+  setProfileAbout: (about: string) => void;
 };
 
 export const useProfileStore = create<I_Profile & ProfileActions>()((set) => {
@@ -43,6 +44,14 @@ export const useProfileStore = create<I_Profile & ProfileActions>()((set) => {
         produce((state: I_Profile) => {
           if (state.profile) {
             state.profile.picture = picture;
+          }
+        }),
+      ),
+    setProfileAbout: (about: string) =>
+      set(
+        produce((state: I_Profile) => {
+          if (state.profile) {
+            state.profile.about = about;
           }
         }),
       ),
