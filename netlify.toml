@@ -1,0 +1,4 @@
+# ./netlify.toml
+
+[functions."crontab-function"]
+schedule = "*/1 * * * *"
