@@ -1,9 +1,8 @@
 export function register() {
-  const isEmailActive: string | undefined = process.env.NEXT_EMAIL;
-
-  if (isEmailActive && isEmailActive === "true") {
-    sendEmail();
-  }
+  // const isEmailActive: string | undefined = process.env.NEXT_EMAIL;
+  // if (isEmailActive && isEmailActive === "true") {
+  //   sendEmail();
+  // }
   // setInterval(
   //   () => {
   //     if (isEmailActive && isEmailActive === "true") {
