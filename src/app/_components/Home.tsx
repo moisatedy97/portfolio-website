@@ -27,11 +27,11 @@ export default async function Home(): Promise<ReactElement | undefined> {
           />
         </div>
         <div className="gap flex flex-col items-center">
-          <p className="text-4xl font-bold text-primary hover:text-primary/90">{data[0].name}</p>
+          <h1 className="text-4xl font-bold text-primary hover:text-primary/90">{data[0].name}</h1>
           <Logo />
-          <p className="text-lg font-semibold text-black hover:text-primary/90 dark:text-white dark:hover:text-primary/90">
+          <h2 className="text-lg font-semibold text-black hover:text-primary/90 dark:text-white dark:hover:text-primary/90">
             {data[0].profession}
-          </p>
+          </h2>
         </div>
         <Socials />
       </div>
